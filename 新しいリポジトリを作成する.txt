@@ -71,3 +71,22 @@ git config user.email
 (3) Git でユーザー名とメールアドレスを設定する方法（全体用と .... https://bing.com/search?q=%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa%e3%81%ab+email+%e3%81%a8+name+%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95.
 (4) 【Git】ユーザー名とメールアドレスを設定する方法 | Web .... https://web-engineer-wiki.com/git/name-email-add/.
 (5) [Git]これだけ押さえる！gitconfigの基本 #Git - Qiita. https://qiita.com/C_HERO/items/c35e679f0b03a5f06469.
+
+
+■gitの出力を文字化けしないようにする
+〇`git config --global core.quotepath false`
+×`git config --global core.pager "LESSCHARSET=utf-8 less"` 
+
+git log --statで日本語が文字化けするのを防ぐ方法は、以下のようになります。
+
+- 環境変数 **LESSCHARSET** を **utf-8** に設定する。これは、git logで使われるページャ **less** の文字コードを指定するためのものです。環境変数を設定する方法は、システムの種類によって異なりますが、一般的にはコマンドラインから `set LESSCHARSET=utf-8` と入力するか、システムの設定画面から編集することができます¹²。
+- gitの設定項目 **core.pager** を **"LESSCHARSET=utf-8 less"** に設定する。これは、git logで使うページャを明示的に指定するためのものです。gitの設定を変更する方法は、コマンドラインから `git config --global core.pager "LESSCHARSET=utf-8 less"` と入力するか、 **.gitconfig** ファイルを直接編集することができます²⁴。
+- gitの設定項目 **core.quotepath** を **false** に設定する。これは、git logで出力されるファイル名をエスケープしないようにするためのものです。日本語のファイル名が `<E6><97>` のように表示されるのを防ぐことができます。gitの設定を変更する方法は、コマンドラインから `git config --global core.quotepath false` と入力するか、 **.gitconfig** ファイルを直接編集することができます³⁴。
+
+以上の設定を行った後は、コマンドプロンプトやPowerShellを再起動して、git logを試してみてください。日本語が正しく表示されるはずです。😊
+
+ソース: Bing との会話 2024/1/9
+(1) git log、git diff、git showでの日本語の文字化けをまとめて対策 .... https://www-creators.com/archives/78.
+(2) Windows10のgit logが文字化け（<E8><A4>...)するときの対処. https://qiita.com/Tachibana446/items/b6a869afa9959581dfc0.
+(3) Windowsでgit log見た時日本語が<E6><97>～みたいに化けた .... https://qiita.com/Fushihara/items/c21172e707d57c833e7e.
+(4) Linuxでのgit logの文字化け #Git - Qiita. https://qiita.com/wakaba260/items/3bc12e369e6fda7c453a.

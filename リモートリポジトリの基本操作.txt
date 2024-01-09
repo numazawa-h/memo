@@ -1,0 +1,48 @@
+■push
+`git push <リモート名> <ブランチ名>`
+以下は、clone してたら不要
+`git remote add <リモート名> <リモートURL>`
+
+リモートリポジトリにpushする方法は、以下の手順で行うことができます。
+
+- まず、GitHubなどのサービスでリモートリポジトリを作成します。リポジトリのURLをコピーしておきます¹²。
+- 次に、ローカルリポジトリで `git remote add <リモート名> <リモートURL>` というコマンドを実行して、リモートリポジトリを登録します²³。
+- そして、ローカルリポジトリで `git push <リモート名> <ブランチ名>` というコマンドを実行して、ローカルの変更をリモートに反映させます²³⁴。
+
+詳しくは、以下のサイトを参考にしてください。
+
+- [【 GitHub 】ローカル作成したリポジトリをリモートに「Push」するまで！ #初心者 - Qiita](^1^)
+- [リモートリポジトリ (GitHub)へのPush方法 #Git - Qiita](^2^)
+- [ローカルリポジトリからリモートリポジトリにpushする方法 - Qiita](^3^)
+- [Git プッシュでリモート リポジトリのファイルを強制的に上書き ...](^4^)
+
+ソース: Bing との会話 2024/1/9
+(1) 【 GitHub 】ローカル作成したリポジトリをリモートに「Push .... https://qiita.com/Futo_Horio/items/4d669f695680bc13d5fa.
+(2) リモートリポジトリ(GitHub)へのPush方法 #Git - Qiita. https://qiita.com/moriokatakashir/items/329164e0077176c2b9e9.
+(3) ローカルリポジトリからリモートリポジトリにpushする方法 - Qiita. https://bing.com/search?q=%e3%83%aa%e3%83%a2%e3%83%bc%e3%83%88%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa%e3%81%abpush%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95.
+(4) ローカルリポジトリからリモートリポジトリにpushする方法 - Qiita. https://qiita.com/n199603/items/0b776024c2002fbb9f4d.
+(5) 【 GitHub 】ローカル作成したリポジトリをリモートに「Push .... https://qiita.com/Futo_Horio/items/4d669f695680bc13d5fa.
+(6) リモートリポジトリ(GitHub)へのPush方法 #Git - Qiita. https://qiita.com/moriokatakashir/items/329164e0077176c2b9e9.
+(7) ローカルリポジトリからリモートリポジトリにpushする方法 - Qiita. https://bing.com/search?q=%e3%83%aa%e3%83%a2%e3%83%bc%e3%83%88%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa%e3%81%abpush%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95.
+(8) ローカルリポジトリからリモートリポジトリにpushする方法 - Qiita. https://qiita.com/n199603/items/0b776024c2002fbb9f4d.
+(9) Git プッシュでリモート リポジトリのファイルを強制的に上書き .... https://www.delftstack.com/ja/howto/git/git-force-push-to-remote-branch/.
+(10) undefined. https://github.com/.
+
+■リモート名
+git remote addのリモート名とは、リモートリポジトリにつける任意の名前です。この名前は、ローカルリポジトリからリモートリポジトリにアクセスするときに使用します。
+例えば、`git push origin master`というコマンドは、originという名前のリモートリポジトリにmasterブランチをプッシュすることを意味します。
+リモート名は自由に決めることができますが、一般的にはoriginがよく使われます¹²。リモート名は、`git remote add`コマンドで追加するときに指定します³。
+リモート名を変更したり削除したりすることもできます⁴。リモート名とそれに対応するURLを確認するには、`git remote -v`コマンドを使います⁵。.
+
+ソース: Bing との会話 2024/1/9
+(1) 【実例付】git remote addでリモートリポジトリを追加する. https://itc.tokyo/git/git-remote-add/.
+(2) 【Git】【GitHub】リモートの追加とリモート名の変更 #Git - Qiita. https://qiita.com/mako0104/items/ce265371297243b38451.
+(3) 【勉強用】Gitのコマンドを実際に動かしてみた（⑤リモート .... https://bing.com/search?q=git+remote+add%e3%81%ae%e3%83%aa%e3%83%a2%e3%83%bc%e3%83%88%e5%90%8d%e3%81%a8%e3%81%af%e4%bd%95%e3%82%92%e6%8c%87%e5%ae%9a%e3%81%99%e3%82%8b%e3%81%ae%e3%81%8b%ef%bc%9f.
+(4) 【勉強用】Gitのコマンドを実際に動かしてみた（⑤リモート .... https://qiita.com/Yuhei0531/items/889360339bf6d16b46c0.
+(5) gitの"origin"とはなんなのか #Git - Qiita. https://qiita.com/shuhei_m/items/6175ac4811359036af9d.
+(6) undefined. https://github.com/user/repo.git.
+(7) undefined. https://github.com/ユーザ名/リポジトリ名.
+(8) undefined. https://github.com/schacon/simplegit-progit.
+(9) ja.wikipedia.org. https://ja.wikipedia.org/wiki/Git.
+
+

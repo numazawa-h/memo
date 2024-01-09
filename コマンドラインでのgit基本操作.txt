@@ -37,9 +37,127 @@ Gitでリポジトリにコミットする方法は以下のようになりま�
 (5) ja.wikipedia.org. https://ja.wikipedia.org/wiki/Git.
 
 
+■ログを見る
+'git log --oneline' …省略形式
+★-n 1 は-1 で指定できる
+'git log -1'
+
+git logコマンドは、Gitのコミット履歴を表示するためのコマンドです。修正ファイルを表示するには、以下のオプションを付けて実行します。
+
+- `--stat` オプションは、各コミットで変更されたファイルの名前と変更行数を表示します。
+- `--name-status` オプションは、各コミットで変更されたファイルの名前と変更の種類（追加、削除、変更など）を表示します。
+- `--word-diff` オプションは、各コミットで変更されたファイルの内容を行単位ではなく単語単位で表示します。
+
+例えば、次のようにコマンドを実行すると、最新のコミットで修正されたファイルの名前と変更内容が表示されます。
+
+```bash
+git log --name-status --word-diff -n 1
+```
+
+詳しくは、以下のサイトを参考にしてください。
+
+- [【Git】git log で変更履歴を確認する方法 #Git - Qiita](^1^)
+- [git logでファイルの変更履歴を確認。問題のコミットを特定！ | WWWクリエイターズ](^2^)
+- [Gitコマンド git logで各コミットで修正があったファイルも出力する](^3^)
+- [commitしたファイルや変更箇所は\"git show\"で確認できる - Qiita](^5^)
+
+ソース: Bing との会話 2024/1/9
+(1) 【Git】git log で変更履歴を確認する方法 #Git - Qiita. https://qiita.com/div_tomo/items/9daa2d2bd29d4ee72fa9.
+(2) git logでファイルの変更履歴を確認。問題のコミットを特定 .... https://www-creators.com/archives/1782.
+(3) Gitコマンド git logで各コミットで修正があったファイルも出力する. https://bing.com/search?q=git+log%e3%81%a7%e4%bf%ae%e6%ad%a3%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95.
+(4) commitしたファイルや変更箇所は"git show"で確認できる - Qiita. https://qiita.com/shuhei_m/items/a80385d8d42df795a06b.
+(5) Gitコマンド git logで各コミットで修正があったファイルも出力する. https://qiita.com/miriwo/items/47f41fa5c70ec21c14d4.
+
+
+■現在のリポジトリのファイルを確認する
+リポジトリの現在のファイルを確認する方法は、 `git ls-files` というコマンドを使うことができます。
+このコマンドは、Gitに追跡されているファイルの一覧を表示します¹。例えば、次のように実行すると、現在のブランチに含まれるファイルの一覧が表示されます。
+
+```bash
+$ git ls-files
+.gitignore
+README.md
+index.html
+style.css
+script.js
+```
+
+このコマンドには、いくつかのオプションを付けることができます。例えば、 `-s` オプションを付けると、ファイルのモードやSHA-1ハッシュも表示されます²。 `-d` オプションを付けると、削除されたファイルのみを表示します³。 `-m` オプションを付けると、変更されたファイルのみを表示します⁴。
+
+詳しくは、以下のサイトを参考にしてください。
+
+- [git-ls-files Documentation](^5^)
+- [よく使うGitコマンド一覧 #Git - Qiita](^4^)
+- [Gitでremoteリポジトリへの参照を確認する方法](^2^)
+
+ソース: Bing との会話 2024/1/9
+(1) ローカルリポジトリの操作について（初心者向け） #初心者 - Qiita. https://qiita.com/EasyCoder/items/1a1807e484345a0543f8.
+(2) Gitでremoteリポジトリへの参照を確認する方法. https://itc.tokyo/git/check-remote-repo-on-git/.
+(3) ローカルリポジトリの操作について（初心者向け） #初心者 - Qiita. https://bing.com/search?q=%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa%e3%81%ae%e7%8f%be%e5%9c%a8%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e7%a2%ba%e8%aa%8d%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95.
+(4) よく使うGitコマンド一覧 #Git - Qiita. https://qiita.com/thinkalot/items/9c185fe41fca269ae0b0.
+(5) undefined. https://github.com/user/repo.git.
+(6) よく使うGitコマンド一覧 #Git - Qiita. https://qiita.com/thinkalot/items/9c185fe41fca269ae0b0.
+(7) Gitでremoteリポジトリへの参照を確認する方法. https://itc.tokyo/git/check-remote-repo-on-git/.
+(8) undefined. https://github.com/newuser/newrepo.git.
+
+
+■ブランチを確認する
+`git branch -a`
+
+Gitでブランチを確認するコマンドは、 `git branch` です。
+このコマンドは、ローカルリポジトリに存在するブランチの一覧を表示します。現在のブランチは、 `*` マークで示されます¹²。
+
+例えば、次のように実行すると、mainブランチとtestブランチが存在し、現在はmainブランチにいることがわかります。
+
+```bash
+$ git branch
+* main
+  test
+```
+
+リモートリポジトリに存在するブランチも確認したい場合は、 `-a` オプションを付けて `git branch -a` と実行します。このコマンドは、ローカルとリモートの両方のブランチを表示します³⁴。
+リモートのブランチは、 `remotes/` で始まる名前で示されます⁵。
+
+例えば、次のように実行すると、ローカルにはmainブランチとtestブランチがあり、リモートにはorigin/mainブランチとorigin/testブランチがあることがわかります。
+
+```bash
+$ git branch -a
+* main
+  test
+  remotes/origin/main
+  remotes/origin/test
+```
+
+詳しくは、以下のサイトを参考にしてください。
+
+- [【Git】git branch - ブランチの一覧表示 #Git - Qiita](^1^)
+- [【Git】ブランチの確認・作成・切り替え・リネーム・削除する方法 | Webエンジニア Wiki](^2^)
+- [git branch コマンド #Git - Qiita](^3^)
+- [git コマンド [ブランチの操作] vol.2 #Git - Qiita](^4^)
+- [ブランチを確認する | Bitbucket Cloud | アトラシアン サポート](^5^)
+
+ソース: Bing との会話 2024/1/9
+(1) 【Git】git branch - ブランチの一覧表示 #Git - Qiita. https://qiita.com/sunstripe2011/items/30f46a7bf451c1a85c2b.
+(2) 【Git】ブランチの確認・作成・切り替え・リネーム・削除する .... https://web-engineer-wiki.com/git/git-branch/.
+(3) ブランチを確認する | Bitbucket Cloud | アトラシアン サポート. https://bing.com/search?q=%e3%83%96%e3%83%a9%e3%83%b3%e3%83%81%e3%82%92%e7%a2%ba%e8%aa%8d%e3%81%99%e3%82%8b%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89.
+(4) git branch コマンド #Git - Qiita. https://qiita.com/chihiro/items/e178e45a7fd5a2fb4599.
+(5) git コマンド [ブランチの操作] vol.2 #Git - Qiita. https://qiita.com/ooyy0121/items/e58df7987832a70db4cc.
+(6) 【Git】git branch - ブランチの一覧表示 #Git - Qiita. https://qiita.com/sunstripe2011/items/30f46a7bf451c1a85c2b.
+(7) 【Git】ブランチの確認・作成・切り替え・リネーム・削除する .... https://web-engineer-wiki.com/git/git-branch/.
+(8) ブランチを確認する | Bitbucket Cloud | アトラシアン サポート. https://bing.com/search?q=%e3%83%96%e3%83%a9%e3%83%b3%e3%83%81%e3%82%92%e7%a2%ba%e8%aa%8d%e3%81%99%e3%82%8b%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89.
+(9) git branch コマンド #Git - Qiita. https://qiita.com/chihiro/items/e178e45a7fd5a2fb4599.
+(10) git コマンド [ブランチの操作] vol.2 #Git - Qiita. https://qiita.com/ooyy0121/items/e58df7987832a70db4cc.
+(11) undefined. http://qiita.com/sunstripe%29.
+(12) undefined. http://sunstripe.main.jp/.
+(13) undefined. https://the.themedia.jp/.
+(14) undefined. http://trusthuman.co.jp/.
+(15) undefined. https://slc-lab.amebaownd.com/.
 
 ■削除する
-こんにちは、こちらはBingです。リポジトリからファイルを削除する方法についてのご質問ですね。Gitでは、`git rm`というコマンドを使って、リポジトリからファイルを削除できます。このコマンドは、リポジトリだけでなく、ワークツリーからもファイルを削除します。もし、ワークツリーにはファイルを残したい場合は、`git rm --cached`というオプションを使います。これは、リポジトリからはファイルを削除しますが、ワークツリーにはファイルを残します。詳しくは、以下のページをご覧ください。
+`git rm`
+`git rm --cached`
+こんにちは、こちらはBingです。リポジトリからファイルを削除する方法についてのご質問ですね。Gitでは、`git rm`というコマンドを使って、リポジトリからファイルを削除できます。このコマンドは、リポジトリだけでなく、ワークツリーからもファイルを削除します。
+もし、ワークツリーにはファイルを残したい場合は、`git rm --cached`というオプションを使います。これは、リポジトリからはファイルを削除しますが、ワークツリーにはファイルを残します。詳しくは、以下のページをご覧ください。
 
 - [リポジトリのファイルを削除する - GitHub Docs](^1^)
 - [【Git】git rmでファイルを削除してみよう（初心者向け） - Qiita](^2^)
@@ -52,3 +170,6 @@ Gitでリポジトリにコミットする方法は以下のようになりま�
 (2) 【Git】git rmでファイルを削除してみよう（初心者向け） - Qiita. https://qiita.com/yusuke___web/items/d80a3adfe01086b4f62b.
 (3) リポジトリからファイルを削除する - Git による版管理環境を .... https://ez-net.jp/article/A4/h-UBoVdE/OqSfZLvKqAPp/.
 (4) リポジトリのファイルを削除する - GitHub Docs. https://bing.com/search?q=%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa%e3%81%8b%e3%82%89%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b.
+
+
+
