@@ -1,0 +1,73 @@
+■GitHub
+こんにちは、こちらはBingです。GitHubに新しいリポジトリを作成する方法についてのご質問ですね。GitHubにはWeb UIからリポジトリを作成できる機能があります。以下の手順に従ってください。
+
+1. GitHubにログインし、右上の「New」ボタンをクリックします。
+2. リポジトリの名前、説明、可視性、初期設定などを入力します。
+3. 「Create repository」ボタンをクリックします。
+
+これで、新しいリポジトリが作成されます。詳しくは[こちら](^2^)をご覧ください。また、URLクエリを使ってフォームフィールドに事前入力することもできます。詳しくは[こちら](^2^)の「URL クエリからの新しいリポジトリの作成」を参照してください。ご参考になれば幸いです。😊
+
+ソース: Bing との会話 2024/1/9
+(1) 新しいリポジトリの作成 - GitHub Docs. https://docs.github.com/ja/repositories/creating-and-managing-repositories/creating-a-new-repository.
+(2) 新しいリポジトリの作成 - GitHub Docs. https://docs.github.com/ja/repositories/creating-and-managing-repositories/creating-a-new-repository.
+(3) 【超入門】GitHubリポジトリの作り方 #Git - Qiita. https://qiita.com/ucan-lab/items/d594404d0d2c64a85a38.
+(4) 【GitHub】ローカルリポジトリを新しいリポジトリにプッシュ .... https://bing.com/search?q=github+%e3%81%ab%e6%96%b0%e3%81%97%e3%81%84%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95.
+(5) GitHub でリモートリポジトリ作成からプッシュまでの流れ - Qiita. https://qiita.com/Misato0127/items/360de00c71ba031b63e8.
+(6) 【GitHub】リポジトリを作成する手順 - Zenn. https://zenn.dev/ymkn8crz/articles/0ce05e8a1e472e.
+(7) undefined. https://docs.github.com/ja/github/collaborating-with-issues-and-pull-requests/about-pull-requests.
+(8) undefined. https://docs.github.com/ja/github/managing-your-work-on-github/creating-an-issue.
+(9) undefined. https://docs.github.com/ja/github/managing-your-work-on-github/adding-issues-and-pull-requests-to-a-project-board.
+(10) undefined. https://docs.github.com/ja/github/administering-a-repository/about-protected-branches.
+(11) undefined. https://github.com/ucan-lab/docker-laravel/tree/main/.github/workflows.
+(12) undefined. https://github.com/ucan-lab/docker-laravel/actions.
+(13) undefined. https://github.com/ucan-lab/laravel-dacapo/tree/main/.github/workflows.
+(14) undefined. https://github.com/ucan-lab/laravel-dacapo/actions.
+(15) undefined. https://www.toptal.com/developers/gitignore.
+
+
+■ローカル
+
+>git clone https://github.com/[ユーザ名]/[リポジトリ名]
+Cloning into 'memo'...
+warning: You appear to have cloned an empty repository.
+
+■ユーザー名とメールアドレスの設定方法
+こんにちは、こちらはBingです。Gitのユーザー名とメールアドレスの設定方法についてのご質問ですね。Gitでは、ユーザー名とメールアドレスを以下の3つのレベルで設定できます¹²。
+
+- システムレベル（/etc/gitconfig）：コンピュータ上のすべてのユーザーとリポジトリに適用されます。
+- グローバルレベル（~/.gitconfig）：コンピュータ上の特定のユーザーとリポジトリに適用されます。
+- ローカルレベル（.git/config）：特定のリポジトリに適用されます。
+
+設定するには、以下のコマンドを実行します。
+
+- システムレベルで設定する場合
+```
+git config --system user.name "ユーザー名"
+git config --system user.email メールアドレス
+```
+- グローバルレベルで設定する場合
+```
+git config --global user.name "ユーザー名"
+git config --global user.email メールアドレス
+```
+- ローカルレベルで設定する場合
+```
+git config --local user.name "ユーザー名"
+git config --local user.email メールアドレス
+```
+
+設定したユーザー名とメールアドレスは、コミットの情報として保存されます。設定を確認するには、以下のコマンドを実行します。
+
+```
+git config user.name
+git config user.email
+```
+
+ご参考になれば幸いです。😊
+
+ソース: Bing との会話 2024/1/9
+(1) Git でユーザー名とメールアドレスを設定する方法（全体用と .... https://laboradian.com/set-git-user-and-email/.
+(2) gitのuser.nameとuser.emailを会社/個人で自動的に切り替える方法. https://qiita.com/fmy/items/653557279c2209a1bc88.
+(3) Git でユーザー名とメールアドレスを設定する方法（全体用と .... https://bing.com/search?q=%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa%e3%81%ab+email+%e3%81%a8+name+%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95.
+(4) 【Git】ユーザー名とメールアドレスを設定する方法 | Web .... https://web-engineer-wiki.com/git/name-email-add/.
+(5) [Git]これだけ押さえる！gitconfigの基本 #Git - Qiita. https://qiita.com/C_HERO/items/c35e679f0b03a5f06469.
